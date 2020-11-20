@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import programa_lista, programa_detalle, programa_create, programa_edit, programa_delete
+from .views import ListarAsignaciones, programa_lista, programa_detalle, programa_create, programa_edit, programa_delete, NuevaAsignacionBeneficio
 
 
 app_name = 'programa'
@@ -10,4 +10,7 @@ urlpatterns = [
     path('create/', programa_create, name='programa_create'),
     path('edit/<int:pk>', programa_edit, name='programa_edit'),
     path('delete/', programa_delete, name='programa_delete'),
+    path('create_asignacion/', NuevaAsignacionBeneficio, name='asignacion_beneficio_create'),
+    path('listar_asignaciones/', ListarAsignaciones, name='listar_asignaciones'),
+
 ]

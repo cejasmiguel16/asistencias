@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<!-- FORM CON EL CUAL SE REALIZA EL FILTADO DE ASIGNACIONES -->
+<table>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_table}}
+
+        <input type="submit" value="Buscar">
+
+    </form>
+</table>
+
+<!-- SE MUESTRA LOS RESULTADOS -->
+{% for a in asignaciones %}
+
+    <p>{{a}}</p>
+
+{% endfor %}
+
+{{resultado}}
+
+
+
+
+{% endblock %}

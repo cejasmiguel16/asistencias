@@ -29,8 +29,26 @@
                   <a href="#">Crear</a>
                 </div>
               </li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Asignaciones</a>
+                <div class="dropdown-content">
+                  <a href="{% url 'programa:asignacion_beneficio_create' %}">Crear</a>
+                  <a href="{% url 'programa:listar_asignaciones' %}">Listar</a>
+                </div>
+              </li>
             </ul>
             <section>
+            
+            {% if messages %}
+
+              {% for message in messages %}
+
+                {{message}}
+
+              {% endfor %}
+
+            {% endif %}
+            
                 {% block contenido %}
                 {% endblock %}
             </section>
